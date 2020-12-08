@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block stylesheet %}
+    {{block.super}}
+{% endblock stylesheet %}
+    
+{% block title %}
+    <title>Get your partner</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="jumbotron bg-primary">
+    <p class="h2 text-center text-light">Know your partner name</p>
+</div>
+
+<div class="container">
+    <form method="GET">
+        <div class="row">
+            <div class="col-10">
+                <input type="number" class="form-control" name="num" placeholder="Enter your lucky number" required/>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary btn-block" type="Submit" >Guess</button>
+            </div>
+        </div>
+    </form>
+
+    
+    {% if name %}
+
+        <div class="mt-4 card bg-light">
+            <div class="card-body">
+                <p class="card-text">
+                    Congratulations! Your partner name starts with <b>{{name|first}}</b>.
+                </p>
+            </div>
+        </div>
+        
+    {% endif %}
+        
+</div>
+    
+{% endblock content %}
+    
+{% block footer %}
+
+{% endblock footer %}
+    
